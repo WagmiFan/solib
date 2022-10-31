@@ -1,0 +1,38 @@
+{
+  "name": "solib",
+  "version": "0.0.1",
+  "description": "**Modular**, **Interoperable**, and **gas optimized** library for **secure EVM smart contract development**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WagmiFan/solib.git"
+  },
+  "keywords": [
+    "Solidity",
+    "ABI",
+    "defi",
+    "wallet",
+    "eth",
+    "evm",
+    "hardhat",
+    "TypeScript",
+    "Foundry",
+    "NFT",
+    "gameFi",
+    "socialFi",
+    "DAO"
+  ],
+  "author": "william.turner.89@mail.ru",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/WagmiFan/solib/issues"
+  },
+  "homepage": "https://github.com/WagmiFan/solib#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "hardhat": "^2.12.1"
+  }
+}
