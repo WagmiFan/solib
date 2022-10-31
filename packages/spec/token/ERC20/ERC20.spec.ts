@@ -1,6 +1,6 @@
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
-import { specFilter } from '../../../scripts/spec_filter';
-import { IERC20 } from '../../../typechain-types';
+import { specFilter } from '@wagmifan/utils';
+import { IERC20 } from '@wagmifan/typechain';
 import { expect } from 'chai';
 import { BigNumber, ContractTransaction } from 'ethers';
 import { ethers } from 'hardhat';

@@ -1,21 +1,24 @@
 {
-  "name": "solib",
+  "name": "@wagmifan/solib",
+  "private": true,
   "version": "0.0.1",
   "description": "**Modular**, **Interoperable**, and **gas optimized** library for **secure EVM smart contract development**.",
-  "main": "index.js",
+  "main": "index.ts",
   "files": [
     "/contracts/**/*.sol",
-    "/abis/*.json",
     "/scripts/*.ts",
-    "/spec/*.ts",
-    "/typechain-types/*.ts",
+    "/packages/abis/*.json",
+    "/packages/spec/*.ts",
+    "/packages/typechain-types/*.ts",
     "!/contracts/mocks/**/*",
     "!/contracts/tests/**/*"
   ],
   "scripts": {
+    "lerna-publish": "npm run build && lerna publish && lerna run tsc-clean",
+    "build": "npx hardhat compile && npm run type && npm run abi && lerna run tsc",
     "abi": "npx hardhat export-abi --no-compile",
+    "pview": "npx nx graph",
     "type": "npx hardhat typechain",
-    "build": "npx hardhat compile && npm run abi",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -51,6 +54,10 @@
     "hardhat": "^2.12.1",
     "hardhat-abi-exporter": "^2.10.0",
     "hardhat-spdx-license-identifier": "^2.0.3",
+    "lerna": "^6.0.1",
     "typechain": "^8.1.0"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

@@ -2,7 +2,7 @@
  * @Author: william89turner william.turner.89@mail.ru
  * @Date: 2022-10-31 16:07:23
  * @LastEditors: william89turner william.turner.89@mail.ru
- * @LastEditTime: 2022-10-31 19:35:40
+ * @LastEditTime: 2022-10-31 21:28:47
  * @FilePath: /solib/hardhat.config.ts
  * @Description: Supper Man Day Day Up!
  */
@@ -24,7 +24,7 @@ const config: HardhatUserConfig = {
     },
   },
   abiExporter: {
-    path: './abis',
+    path: './packages/abis',
     runOnCompile: true,
     clear: true,
     flat: true,
@@ -40,7 +40,7 @@ const config: HardhatUserConfig = {
     runOnCompile: true,
   },
   typechain: {
-    outDir: 'typechain-types',
+    outDir: 'packages/typechain-types',
     target: 'ethers-v5',
     alwaysGenerateOverloads: true, // should overloads with full signatures like deposit(uint256) be generated always, even if there are no overloads?
     externalArtifacts: ['artifacts/*.json'], // optional array of glob patterns with external artifacts to process (for example external libs from node_modules)

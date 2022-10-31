@@ -1,0 +1,29 @@
+{
+  "name": "@wagmifan/abis",
+  "version": "0.0.1",
+  "description": "ABIs for @wagmifan/solib contracts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WagmiFan/solib.git"
+  },
+  "keywords": [
+    "Solidity",
+    "ABI",
+    "defi",
+    "wallet",
+    "DID",
+    "DAO",
+    "NFT",
+    "gameFi",
+    "socialFi"
+  ],
+  "author": "william.turner.89@mail.ru",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/WagmiFan/solib/issues"
+  },
+  "homepage": "https://github.com/WagmiFan/solib#readme"
+}

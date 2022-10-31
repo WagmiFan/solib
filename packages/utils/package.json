@@ -1,0 +1,31 @@
+{
+  "name": "@wagmifan/utils",
+  "version": "0.0.1",
+  "description": "utils functions for interacting with and validating contracts",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WagmiFan/solib.git"
+  },
+  "keywords": [
+    "Solidity",
+    "DeFi",
+    "wallet",
+    "DID",
+    "DAO",
+    "NFT",
+    "gameFi",
+    "socailFi",
+    "web3",
+    "web5"
+  ],
+  "author": "william.turner.89@mail.ru",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/WagmiFan/solib/issues"
+  },
+  "homepage": "https://github.com/WagmiFan/solib#readme"
+}

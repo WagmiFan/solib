@@ -1,10 +1,10 @@
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
-import { describeSpecOfERC20 } from '../../../spec';
+import { describeSpecOfERC20 } from '@wagmifan/spec';
 import {
   ERC20,
   ERC20Mock,
   ERC20Mock__factory,
-} from '../../../typechain-types';
+} from '@wagmifan/typechain';
 import { expect } from 'chai';
 import { ethers } from 'hardhat';
 

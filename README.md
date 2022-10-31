@@ -2,7 +2,7 @@
  * @Author: william89turner william.turner.89@mail.ru
  * @Date: 2022-10-31 16:07:23
  * @LastEditors: william89turner william.turner.89@mail.ru
- * @LastEditTime: 2022-10-31 18:49:50
+ * @LastEditTime: 2022-10-31 22:46:57
  * @FilePath: /solib/README.md
  * @Description: Supper Man Day Day Up!
 -->
@@ -20,40 +20,15 @@
 
 It consists of the following packages:
 
-| package                           | description                                                                           | 📕                          |
-| --------------------------------- | ------------------------------------------------------------------------------------- | --------------------------- |
-| `@wagmifan/solib/abis`            | contract ABIs                                                                         | [📖](./abis/README.md)      |
-| `@wagmifan/solib/contracts`       | core contracts                                                                        | [📖](./contracts/README.md) |
-| `@wagmifan/solib/typechain-types` | TypeScript bindings for smart contracts                                               | -                           |
-| `@wagmifan/solib/spec`            | portable tests which may be run against third-party implementations of core contracts | [📖](./spec/README.md)      |
+| package               | description                                                                           | 📕                                         |
+| --------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------ |
+| `@wagmifan/abis`      | contract ABIs                                                                         | [📖](./packages/abis/README.md)            |
+| `@wagmifan/solib`     | core contracts                                                                        | [📖](./contracts/README.md)                |
+| `@wagmifan/typechain` | TypeScript bindings types(typechain-types)for smart contracts                         | [📖](./packages/typechain-types/README.md) |
+| `@wagmifan/spec`      | portable tests which may be run against third-party implementations of core contracts | [📖](./packages/spec/README.md)            |
+| `@wagmifan/utils`     | utils functions for interacting with and validating contracts                         | [📖](./packages/utils/README.md)           |
 
 ## Contracts
-
-```ml
-mocks — "*MOCK of Solidity contracts for test"
-tests — ".t.sol scripts for Foundry test"
-auth
-├─ Owned — "Simple single owner authorization"
-├─ RolesAuthority — "Role based Authority that supports up to 256 roles"
-defi
-├─ ERC4626 — "Minimal ERC4626 tokenized Vault implementation"
-tokens
-├─ WETH — "Minimalist and modern Wrapped Ether implementation"
-├─ ERC20 — "Modern and gas efficient ERC20 + EIP-2612 implementation"
-├─ ERC721 — "Modern, minimalist, and gas efficient ERC721 implementation"
-├─ ERC1155 — "Minimalist and gas efficient standard ERC1155 implementation"
-utils
-├─ SSTORE2 — "Library for cheaper reads and writes to persistent storage"
-├─ CREATE3 — "Deploy to deterministic addresses without an initcode factor"
-├─ LibString — "Library for creating string representations of uint values"
-├─ SafeCastLib — "Safe unsigned integer casting lib that reverts on overflow"
-├─ SignedWadMath — "Signed integer 18 decimal fixed point arithmetic library"
-├─ MerkleProofLib — "Efficient merkle tree inclusion proof verification library"
-├─ ReentrancyGuard — "Gas optimized reentrancy protection for smart contracts"
-├─ FixedPointMathLib — "Arithmetic library with operations for fixed-point numbers"
-├─ Bytes32AddressLib — "Library for converting between addresses and bytes32 values"
-├─ SafeTransferLib — "Safe ERC20/ETH transfer lib that handles missing return values"
-```
 
 ## ABI
 
@@ -66,63 +41,9 @@ export types to ./typechain-types dir with `@typechain/hardhat`:
 
 [@typechain/hardhat](https://www.npmjs.com/package/@typechain/hardhat) : Automatically generate TypeScript bindings for smart contracts while using Hardhat.
 
-test sample : ./test/Lock.ts
-
-```ts
-import { ethers } from "hardhat";
-import LockArtifact from "../artifacts/contracts/Lock.sol/Lock.json";
-import { Lock } from "../typechain-types/Lock";
-
-let dLock: Lock = new ethers.Contract(
-  LockAddr,
-  LockArtifact.abi,
-  signer
-) as Lock;
-```
-
-dApp sample(`$ npm install @wagmifan/solib`) : dapp.ts
-
-```ts
-import { ethers, BigNumber } from "ethers";
-import {abis,typechain-types} from "@wagmifan/solib";
-
-const { Lock } = typechain-types;
-let dLock: Lock = new ethers.Contract(
-  LockAddr,
-  abis.Lock,
-  signer
-) as Lock;
-```
-
 ## spec
 
 Automated behavior tests are designed to make use of the special contracts ,such as EIP(ERC).
-
-For example, consider a custom `ERC20` implementation:
-
-```solidity
-import '@wagmifan/solib/contracts/token/ERC20/ERC20.sol';
-
-contract CustomToken is ERC20 {
-  // custom code...
-}
-
-```
-
-`ERC20` behavior tests :
-
-```ts
-describeSpecOfERC20(
-  {
-    deploy: () => instance,
-  },
-  ["#balanceOf"]
-);
-
-describe("#balanceOf", function () {
-  // custom tests
-});
-```
 
 ## Safety
 
@@ -132,36 +53,31 @@ these contracts are **not designed with user safety** in mind.
 
 We **do not give any warranties** and **will not be liable for any loss** incurred through any use of this codebase.
 
-## Installation
-
-To install with [**Foundry**](https://github.com/gakonst/foundry):
-
-```sh
-forge install wagmifan/solib
-```
-
-To install with [**Hardhat**](https://github.com/nomiclabs/hardhat) or [**Truffle**](https://github.com/trufflesuite/truffle):
-
-```sh
-npm install @wagmifan/solib
-```
-
-## Usage
-
-Once installed, you can use the contracts in the library by importing them:
-
-```solidity
-pragma solidity ^0.8.0;
-
-import "@wagmifan/solib/contracts/token/ERC721/ERC721.sol";
-
-contract MyNFTs is ERC721 {
-    constructor() ERC721("MyNFTs", "MNFT") {
-    }
-}
-```
-
 ## development
+
+### npm workspace with lerna
+
+init workspace:
+
+```shell
+sudo npm i -g lerna
+cd solib
+lerna init
+```
+
+init package:
+
+```shell
+mkdir -p packages/newpack
+cd packages/newpack
+npm init
+cd -
+lerna bootstrap
+```
+
+list local public packages: `lerna ls`
+view packages graph: `npx nx graph`
+packages changed : `lerna changed`
 
 ### hardhat
 
