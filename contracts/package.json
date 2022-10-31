@@ -4,6 +4,10 @@
   "version": "0.0.1",
   "description": "**Modular**, **Interoperable**, and **gas optimized** library for **secure EVM smart contract development**.",
   "main": "index.js",
+  "files": [
+    "/**/*.sol",
+    "!/**/*Mock.sol"
+  ],
   "directories": {
     "test": "tests"
   },

@@ -2,12 +2,16 @@
  * @Author: william89turner william.turner.89@mail.ru
  * @Date: 2022-10-31 22:27:25
  * @LastEditors: william89turner william.turner.89@mail.ru
- * @LastEditTime: 2022-10-31 22:30:43
+ * @LastEditTime: 2022-11-01 00:01:36
  * @FilePath: /solib/contracts/README.md
  * @Description: Supper Man Day Day Up!
 -->
 
 ## @wagmifan/solib Contracts
+
+@wagmifan/solib contract library. Part of the @wagmifan/solib Solidity monorepo.
+
+## Contracts
 
 @wagmifan/solib core contracts
 
