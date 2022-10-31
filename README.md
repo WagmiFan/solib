@@ -2,7 +2,7 @@
  * @Author: william89turner william.turner.89@mail.ru
  * @Date: 2022-10-31 16:07:23
  * @LastEditors: william89turner william.turner.89@mail.ru
- * @LastEditTime: 2022-10-31 17:28:17
+ * @LastEditTime: 2022-10-31 18:49:50
  * @FilePath: /solib/README.md
  * @Description: Supper Man Day Day Up!
 -->
@@ -15,6 +15,17 @@
 - role-based permissioning
 
 ## Overview
+
+@wagmifan/solib is an interoperable-first Solidity smart contract development library.
+
+It consists of the following packages:
+
+| package                           | description                                                                           | 📕                          |
+| --------------------------------- | ------------------------------------------------------------------------------------- | --------------------------- |
+| `@wagmifan/solib/abis`            | contract ABIs                                                                         | [📖](./abis/README.md)      |
+| `@wagmifan/solib/contracts`       | core contracts                                                                        | [📖](./contracts/README.md) |
+| `@wagmifan/solib/typechain-types` | TypeScript bindings for smart contracts                                               | -                           |
+| `@wagmifan/solib/spec`            | portable tests which may be run against third-party implementations of core contracts | [📖](./spec/README.md)      |
 
 ## Contracts
 
@@ -53,7 +64,7 @@ export ABI to ./abis dir with `hardhat-abi-exporter` :
 
 export types to ./typechain-types dir with `@typechain/hardhat`:
 
-[@typechain/hardhat](https://www.npmjs.com/package/@typechain/hardhat) : Automatically generate TypeScript bindings for smartcontracts while using Hardhat.
+[@typechain/hardhat](https://www.npmjs.com/package/@typechain/hardhat) : Automatically generate TypeScript bindings for smart contracts while using Hardhat.
 
 test sample : ./test/Lock.ts
 
@@ -84,6 +95,34 @@ let dLock: Lock = new ethers.Contract(
 ```
 
 ## spec
+
+Automated behavior tests are designed to make use of the special contracts ,such as EIP(ERC).
+
+For example, consider a custom `ERC20` implementation:
+
+```solidity
+import '@wagmifan/solib/contracts/token/ERC20/ERC20.sol';
+
+contract CustomToken is ERC20 {
+  // custom code...
+}
+
+```
+
+`ERC20` behavior tests :
+
+```ts
+describeSpecOfERC20(
+  {
+    deploy: () => instance,
+  },
+  ["#balanceOf"]
+);
+
+describe("#balanceOf", function () {
+  // custom tests
+});
+```
 
 ## Safety
 

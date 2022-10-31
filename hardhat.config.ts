@@ -2,7 +2,7 @@
  * @Author: william89turner william.turner.89@mail.ru
  * @Date: 2022-10-31 16:07:23
  * @LastEditors: william89turner william.turner.89@mail.ru
- * @LastEditTime: 2022-10-31 17:09:21
+ * @LastEditTime: 2022-10-31 19:35:40
  * @FilePath: /solib/hardhat.config.ts
  * @Description: Supper Man Day Day Up!
  */
@@ -33,7 +33,7 @@ const config: HardhatUserConfig = {
     format: "json",
   },
   gasReporter: {
-    enabled: true,
+    enabled: false,
   },
   spdxLicenseIdentifier: {
     overwrite: false,
