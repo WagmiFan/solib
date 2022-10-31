@@ -32,6 +32,9 @@
   "dependencies": {
     "@wagmifan/utils": "^0.0.2"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://github.com/WagmiFan/solib#readme",
-  "gitHead": "4e5f244e1e9a7d57c6df91f17f99d3fa9e0a20b0"
+  "gitHead": "f862d1bec9c13149803fca2fcf00200d4d3e00c4"
 }
