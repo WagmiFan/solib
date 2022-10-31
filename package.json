@@ -4,6 +4,8 @@
   "description": "**Modular**, **Interoperable**, and **gas optimized** library for **secure EVM smart contract development**.",
   "main": "index.js",
   "scripts": {
+    "abi": "npx hardhat export-abi --no-compile",
+    "build": "npx hardhat compile && npm run abi",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +35,8 @@
   "homepage": "https://github.com/WagmiFan/solib#readme",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
-    "hardhat": "^2.12.1"
+    "hardhat": "^2.12.1",
+    "hardhat-abi-exporter": "^2.10.0",
+    "hardhat-spdx-license-identifier": "^2.0.3"
   }
 }
