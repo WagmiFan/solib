@@ -2,7 +2,7 @@
  * @Author: william89turner william.turner.89@mail.ru
  * @Date: 2022-10-31 16:07:23
  * @LastEditors: william89turner william.turner.89@mail.ru
- * @LastEditTime: 2022-10-31 16:24:51
+ * @LastEditTime: 2022-10-31 17:28:17
  * @FilePath: /solib/README.md
  * @Description: Supper Man Day Day Up!
 -->
@@ -46,7 +46,42 @@ utils
 
 ## ABI
 
+export ABI to ./abis dir with `hardhat-abi-exporter` :
 [hardhat-abi-exporter](https://www.npmjs.com/package/hardhat-abi-exporter) : Export Ethereum smart contract ABIs on compilation via Hardhat.
+
+## typechain
+
+export types to ./typechain-types dir with `@typechain/hardhat`:
+
+[@typechain/hardhat](https://www.npmjs.com/package/@typechain/hardhat) : Automatically generate TypeScript bindings for smartcontracts while using Hardhat.
+
+test sample : ./test/Lock.ts
+
+```ts
+import { ethers } from "hardhat";
+import LockArtifact from "../artifacts/contracts/Lock.sol/Lock.json";
+import { Lock } from "../typechain-types/Lock";
+
+let dLock: Lock = new ethers.Contract(
+  LockAddr,
+  LockArtifact.abi,
+  signer
+) as Lock;
+```
+
+dApp sample(`$ npm install @wagmifan/solib`) : dapp.ts
+
+```ts
+import { ethers, BigNumber } from "ethers";
+import {abis,typechain-types} from "@wagmifan/solib";
+
+const { Lock } = typechain-types;
+let dLock: Lock = new ethers.Contract(
+  LockAddr,
+  abis.Lock,
+  signer
+) as Lock;
+```
 
 ## spec
 
