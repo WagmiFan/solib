@@ -1,6 +1,6 @@
 {
   "name": "@wagmifan/typechain",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TypeScript bindings types(typechain-types)for @wagmifan/solib contracts ",
   "main": "index.ts",
   "scripts": {

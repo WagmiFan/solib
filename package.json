@@ -1,17 +1,15 @@
 {
-  "name": "@wagmifan/solib",
-  "private": true,
+  "name": "root",
+  "private": false,
   "version": "0.0.1",
   "description": "**Modular**, **Interoperable**, and **gas optimized** library for **secure EVM smart contract development**.",
   "main": "index.ts",
   "files": [
     "/contracts/**/*.sol",
-    "/scripts/*.ts",
-    "/packages/abis/*.json",
-    "/packages/spec/*.ts",
-    "/packages/typechain-types/*.ts",
     "!/contracts/mocks/**/*",
-    "!/contracts/tests/**/*"
+    "!/contracts/tests/**/*",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "lerna-publish": "npm run build && lerna publish && lerna run tsc-clean",
@@ -56,6 +54,9 @@
     "hardhat-spdx-license-identifier": "^2.0.3",
     "lerna": "^6.0.1",
     "typechain": "^8.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "workspaces": [
     "packages/*"
