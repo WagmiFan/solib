@@ -1,5 +1,6 @@
 {
   "name": "@wagmifan/abis",
+  "private": false,
   "version": "0.0.2",
   "description": "ABIs for @wagmifan/solib contracts",
   "scripts": {
@@ -25,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/WagmiFan/solib/issues"
   },
-  "homepage": "https://github.com/WagmiFan/solib#readme"
+  "homepage": "https://github.com/WagmiFan/solib#readme",
+  "gitHead": "4e5f244e1e9a7d57c6df91f17f99d3fa9e0a20b0"
 }

@@ -1,5 +1,6 @@
 {
   "name": "@wagmifan/utils",
+  "private": false,
   "version": "0.0.2",
   "description": "utils functions for interacting with and validating contracts",
   "main": "index.ts",
@@ -27,5 +28,6 @@
   "bugs": {
     "url": "https://github.com/WagmiFan/solib/issues"
   },
-  "homepage": "https://github.com/WagmiFan/solib#readme"
+  "homepage": "https://github.com/WagmiFan/solib#readme",
+  "gitHead": "4e5f244e1e9a7d57c6df91f17f99d3fa9e0a20b0"
 }

@@ -1,5 +1,6 @@
 {
   "name": "@wagmifan/spec",
+  "private": false,
   "version": "0.0.2",
   "description": "Portable specifications for @wagmifan/solib contracts",
   "main": "index.ts",
@@ -31,5 +32,6 @@
   "dependencies": {
     "@wagmifan/utils": "^0.0.2"
   },
-  "homepage": "https://github.com/WagmiFan/solib#readme"
+  "homepage": "https://github.com/WagmiFan/solib#readme",
+  "gitHead": "4e5f244e1e9a7d57c6df91f17f99d3fa9e0a20b0"
 }
